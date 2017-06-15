@@ -1,0 +1,57 @@
+let mapleader=","
+
+set number
+set smartcase
+set ignorecase
+
+" Window commands
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+nmap <leader>cw :action VimWindowClose<CR>
+
+" Add extenstions here
+set vim-surround
+set surround
+nmap <leader>nc :action NewClass<CR>
+
+" These create newlines like o and O but stay in normal mode
+nmap zj o<Esc>k
+nmap zk O<Esc>j
+
+" Movement/Find commands
+nmap <leader>g :action GotoDeclaration<CR>
+nmap <leader>b :action Back<CR>
+nmap <leader>f :action Forward<CR>
+nmap <leader>gc :action GotoClass<CR>
+nmap <leader>p :action GotoFile<CR>
+nmap <leader>rf :action RecentFiles<CR>
+
+" Formatting
+nmap <leader>oi :action OptimizeImports<CR>
+nmap <leader>a :action Annotate<CR>
+
+" Tool Windows
+nmap <leader>cw :action VimWindowClose<CR>
+nmap <leader>x :action CloseProject<CR>
+nmap <leader>h :action HideAllWindows<CR>
+nmap <leader>tp :action ActivateProjectToolWindow<CR>
+nmap <leader>tg :action ActivateGradleToolWindow<CR>
+
+" Refactoring
+nmap <leader>om :action OverrideMethods<CR>
+nmap <leader>im :action ImplementMethods<CR>
+nmap <leader>vc :action Vcs.Show.Local.Changes<CR>
+
+" Run and Debug
+nmap <leader>ft :action RerunFailedTests<CR>
+nmap <leader>rr :action Rerun<CR>
+nmap <leader>rc :action RunClass<CR>
+nmap <leader>dc :action DebugClass<CR>
+nmap <leader>tb :action ToggleLineBreakpoint<CR>
+nmap <leader>s  :action StepOver<CR>
+nmap <leader>dr :action Resume<CR>
+
+" Reload
+nmap <leader>vs :source ~/.ideavimrc<CR>
