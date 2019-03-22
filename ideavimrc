@@ -1,9 +1,11 @@
-let mapleader=","
+let mapleader=" "
 
 set number
 set smartcase
 set ignorecase
 set showmode
+set visualbell
+set noerrorbells
 
 " Window commands
 
@@ -19,19 +21,26 @@ nmap <leader>nc :action NewClass<CR>
 nmap zj o<Esc>k
 nmap zk O<Esc>j
 
+" Searching
+nmap <leader>sc :action GotoClass<CR>
+nmap <leader>sr :action RecentFiles<CR>
+
 " Movement/Find commands
 nmap <leader>g :action GotoDeclaration<CR>
 nmap <leader>b :action Back<CR>
 nmap <leader>f :action Forward<CR>
 nmap <leader>gc :action GotoClass<CR>
 nmap <leader>p :action GotoFile<CR>
-nmap <leader>e :action RecentFiles<CR>
+"nmap <leader>e :action RecentFiles<CR>
 
 " Formatting
 nmap <leader>oi :action OptimizeImports<CR>
 nmap <leader>a :action Annotate<CR>
-nmap <leader>ff :action ReformatCode<CR>
+nmap <leader>ff :action ReformatCode<CR><ESC>
 
+" Windows
+nmap <leader>wc :action VimWindowClose<CR> 
+nmap <leader>wh :action HideAllWindows<CR>
 " Tool Windows
 nmap <leader>cw :action VimWindowClose<CR>
 nmap <leader>x :action CloseProject<CR>
