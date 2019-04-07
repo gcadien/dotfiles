@@ -23,7 +23,7 @@ nmap zk O<Esc>j
 
 " Searching
 nmap <leader>sc :action GotoClass<CR>
-nmap <leader>sr :action RecentFiles<CR>
+nmap <leader>sr :action RecentFiles<CR><ESC>
 
 " Movement/Find commands
 nmap <leader>g :action GotoDeclaration<CR>
