@@ -9,8 +9,13 @@ set noerrorbells
 
 " Window commands
 
-nmap <leader>cw :action VimWindowClose<CR>
-nmap <leader>wo :action VimWindowOnly<CR>
+vnoremap <leader>gi    <Esc>:action Git.Init<CR>
+
+noremap <leader>cw :action VimWindowClose<CR>
+vnoremap <leader>cw <Esc>:action VimWindowClose<CR>
+
+noremap <leader>wo :action VimWindowOnly<CR>
+vnoremap <leader>wo <Esc>:action VimWindowOnly<CR>
 
 " Add extenstions here
 set surround
@@ -21,12 +26,12 @@ nmap <leader>nc :action NewClass<CR>
 nmap zj o<Esc>k
 nmap zk O<Esc>j
 
-" Movement/Find commands
-nmap <leader>gc :action GotoClass<CR><ESC>
-nmap <leader>gr :action RecentFiles<CR><ESC>
-nmap <leader>gf :action GotoFile<CR><ESC>
-nmap <leader>gb :action Back<CR><ESC>
-nmap <leader>gf :action Forward<CR><ESC>
+" Searching
+noremap <leader>sc :action GotoClass<CR>
+vnoremap <leader>sc <Esc>:action GotoClass<CR>
+
+noremap <leader>sr <Esc>:action RecentFiles<CR><ESC>
+vnoremap <leader>sr <Esc>:action RecentFiles<CR><ESC>
 
 " Movement/Find commands
 nmap <leader>g :action GotoDeclaration<CR><ESC>
@@ -37,10 +42,10 @@ nmap <leader>e :action ShowErrorDescription<CR><ESC>
 " nmap <leader>p :action GotoFile<CR>
 " nmap <leader>e :action RecentFiles<CR>
 
-" Formatting
-nmap <leader>oi :action OptimizeImports<CR><ESC>
-nmap <leader>a :action Annotate<CR><ESC>
-nmap <leader>ff :action ReformatCode<CR><ESC>
+nmap <leader>oi :action OptimizeImports<CR>
+nmap <leader>a :action Annotate<CR>
+noremap <leader>ff <ESC>:action ReformatCode<CR>
+vnoremap <leader>ff <ESC>:action ReformatCode<CR>
 
 " Windows
 nmap <leader>wc :action VimWindowClose<CR> 
@@ -56,10 +61,11 @@ nmap <leader>tg :action ActivateGradleToolWindow<CR>
 nmap <leader>tt :action ActivateTerminalToolWindow<CR>
 
 " Refactoring
-nmap <leader>om :action OverrideMethods<CR>
-nmap <leader>im :action ImplementMethods<CR>
-nmap <leader>vc :action Vcs.Show.Local.Changes<CR>
-nmap <leader>sd :action ShowIntentionActions<CR>
+nmap <leader>ro :action OverrideMethods<CR>
+nmap <leader>ri :action ImplementMethods<CR>
+"nmap <leader>vc :action Vcs.Show.Local.Changes<CR>
+nnoremap <leader>sd :action ShowIntentionActions<CR><ESC>
+vnoremap <leader>sd <ESC>:action ShowIntentionActions<CR>
 
 " Run and Debug
 nmap <leader>ft :action RerunFailedTests<CR>
