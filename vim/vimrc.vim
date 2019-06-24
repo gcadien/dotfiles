@@ -1,59 +1,81 @@
-call plug#begin('~/.vim/plugged')
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-Plug 'Valloric/YouCompleteMe'
-Plug 'scrooloose/nerdtree'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'sirtaj/vim-openscad'
-Plug 'morhetz/gruvbox'
-Plug 'sbdchd/neoformat'
+call plug#begin('~/.vim/bundle')
+
+Plug 'plasticboy/vim-markdown'
 Plug 'vim-airline/vim-airline'
+Plug 'vimwiki/vimwiki'
+Plug 'Shougo/denite.nvim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
+Plug 'scrooloose/nerdtree'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer' }
+Plug 'zah/nim.vim'
+Plug 'reedes/vim-pencil'
+Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'godlygeek/tabular'
+
 call plug#end()
 
-set rtp+=$HOME/dotfiles/vim
-syntax on
-filetype plugin indent on
+
 syntax enable
-colorscheme gruvbox
 set background=dark
+colorscheme gruvbox
+filetype plugin indent on
+set directory^=$HOME/.vim/tmp//
+
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+au BufNewFile,BufRead *.nim set filetype=nim
+
 let mapleader = ','
-nnoremap <leader>d :NERDTreeToggle<CR>
-" Next buffer
-nnoremap <leader>n :bn<CR>
-" Previous buffer
-nnoremap <leader>p :bp<CR>
-nnoremap <leader>b :CtrlPBuffer<CR>     " Only search buffers
-" Indent with no tabs
-set expandtab
+
+" VimWiki
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+let g:vimwiki_list = [{'path': '~/newwiki/',
+                       \ 'syntax': 'markdown', 'ext': '.md'}]
+nmap <leader>tt :VimwikiToggleListItem<CR>
+" --- Vim Airline ---
+let g:airline_powerline_fonts = 1
+
+
+" -- YouCompleteMe --
+let g:ycm_autoclose_preview_window_after_completion=1
+
+let g:vim_markdown_preview_github=0
+let g:ycm_semantic_triggers = {
+	\   'java': [ 're!\w{2}' ]
+	\ }
+set clipboard=unnamed
+
+set expandtab       " Tabs are spaces
+set ignorecase      " Case insensitive search
+set softtabstop=2   " Soft tabs 2 spaces
+set ts=2
 set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set number          " Show line numbers
+set ruler           " Show cursor position
 
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
+" Window movement
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
-" No swap file
-set noswapfile
 
-" Neovim Terminal
-if has("nvim")
-  :tnoremap <Esc> <C-\><C-n>
+nnoremap <leader>d :NERDTreeToggle<CR>
+
+" Store the bookmarks file
+let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
+
+" Show the bookmarks table on startup
+let NERDTreeShowBookmarks=1
+
+let g:ycm_log_level = 'debug'
+
+" Neovim Specific
+if has('nvim')
+  tnoremap <Esc><Esc> <C-\><C-n>
+  tnoremap <M-1> <Esc>1
+  tnoremap <A-1> <Esc>1
 endif
-
-let g:UltiSnipsSnippetsDir = $HOME . '/dotfiles/vim/UltiSnips'
-" UltiSnips triggering
-let g:UltiSnipsExpandTrigger = '<C-s>'
-let g:UltiSnipsJumpForwardTrigger = '<C-j>'
-let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
-
-let g:ycm_server_log_level = 'debug'
-
-let g:neoformat_java_google = {
-            \ 'exe': 'java',
-            \ 'args': ['-jar /home/geoff/lib/google-java-format-1.6-all-deps.jar -'],
-            \ 'stdin': 1,
-            \ }
-
-let g:neoformat_enabled_java = ['google']
-" let g:solarized_termcolors=256
