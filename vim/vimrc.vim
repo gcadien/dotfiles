@@ -15,9 +15,15 @@ Plug 'zah/nim.vim'
 Plug 'reedes/vim-pencil'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'godlygeek/tabular'
-
+Plug 'rust-lang/rust.vim'
+Plug 'timonv/vim-cargo'
+Plug '/usr/bin/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'sirtaj/vim-openscad'
 call plug#end()
 
+set number
+set rtp+=$HOME/dotfiles/vim
 
 syntax enable
 set background=dark
@@ -67,6 +73,13 @@ nnoremap <leader>d :NERDTreeToggle<CR>
 
 " Store the bookmarks file
 let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
+" Rust
+let g:autofmt_autosave = 1
+let g:UltiSnipsSnippetsDir = $HOME . '/dotfiles/vim/UltiSnips'
+" UltiSnips triggering
+let g:UltiSnipsExpandTrigger = '<C-s>'
+let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
 
 " Show the bookmarks table on startup
 let NERDTreeShowBookmarks=1
