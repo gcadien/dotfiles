@@ -1,0 +1,78 @@
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "W", function()
+  hs.alert.show("Hello World!")
+end)
+
+hs.hotkey.bind({"alt", "ctrl"}, "Right", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x + (max.w / 2)
+  f.y = max.y
+  f.w = max.w / 2
+  f.h = max.h
+  win:setFrame(f)
+end)
+
+hs.hotkey.bind({"alt", "ctrl"}, "Left", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x
+  f.y = max.y
+  f.w = max.w / 2
+  f.h = max.h
+  win:setFrame(f)
+end)
+
+hs.hotkey.bind({"alt", "ctrl"}, "Up", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  win:setFrame(max)
+  hs.alert.show(hs.screen.allScreens()[0])
+end)
+
+hs.hotkey.bind({"ctrl", "alt"}, "n", function()
+  local apps = hs.application.runningApplications()
+  for k,v in pairs(apps) do
+    if (string.lower(v:title()) == "iterm") then
+      hs.alert.show(v:title())
+      for key,win in pairs(v:allWindows()) do
+        if (string.find(win:title(), 'Notes')) then
+          hs.alert.show(win:title())
+          win:focus()
+        end
+      end
+    end
+  end
+end)
+
+hs.hotkey.bind({"shift", "ctrl"}, "Left", function() 
+  local win = hs.window.focusedWindow()
+  win:moveOneScreenWest()
+  for key, other in ipairs(win:otherWindowsSameScreen()) do
+    --hs.alert.show(other:title())
+  end
+end)
+
+hs.hotkey.bind({"shift", "ctrl"}, "Right", function() 
+  local win = hs.window.focusedWindow()
+  win:moveOneScreenEast()
+end)
+
+function applicationWatcher(appName, eventType, appObject)
+  if (eventType == hs.application.watcher.activated) then
+    --hs.alert.show(eventType)
+  end
+end
+
+hs.window.animationDuration = 0
+hs.window.setShadows(true)
+local appWatcher = hs.application.watcher.new(applicationWatcher)
+appWatcher:start()

@@ -7,6 +7,9 @@ set showmode
 set visualbell
 set noerrorbells
 
+" IdeaVim extensions
+set easymotion
+
 " Window commands
 
 vnoremap <leader>gi    <Esc>:action Git.Init<CR>
@@ -21,6 +24,10 @@ vnoremap <leader>wo <Esc>:action VimWindowOnly<CR>
 set surround
 
 nmap <leader>nc :action NewClass<CR>
+
+" Errors
+nnoremap <leader>en :action GotoNextError<CR>
+vnoremap <leader>en :action GotoNextError<CR>
 
 " These create newlines like o and O but stay in normal mode
 nmap zj o<Esc>k
