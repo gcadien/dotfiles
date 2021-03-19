@@ -1,18 +1,8 @@
+" NVIM CONFIG
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-call plug#begin()
-Plug 'neovim/nvim-lsp'
-Plug 'JuliaEditorSupport/julia-vim'
-Plug 'neovim/nvim-lsp'
-Plug 'nvim-lua/diagnostic-nvim'
-Plug 'nvim-lua/completion-nvim'
-Plug 'gruvbox-community/gruvbox'
-Plug 'gruvbox-community/gruvbox'
-Plug 'jpalardy/vim-slime'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-call plug#end()
+lua require("plugins")
 
 syntax enable
 colorscheme gruvbox
@@ -28,22 +18,111 @@ set number          " Show line numbers
 
 let mapleader = " "
 
+" --------- Files ---------
+noremap <leader>fs :write<CR>
+
 " vim-slime configuration
 let g:slime_target = "neovim"
 let g:airline_theme='gruvbox'
-" key bindings for quickly moving between windows
-" h left, l right, k up, j down
-noremap <leader>h <c-w>h
-noremap <leader>l <c-w>l
-noremap <leader>k <c-w>k
-noremap <leader>j <c-w>j
+
+
+noremap <silent> <leader>q :quit<CR>
+
+" ---------- Buffers ---------
+noremap <silent> <leader>bb :Denite buffer<CR>
+
+" ---------- Notes -----------
+noremap <leader>ne :NoteList<CR>
+
+" ---------- Windows ---------
+noremap <leader>wq <c-w>q 
+noremap <leader>wv <c-w>v
+noremap <leader>ws <c-w>s
+noremap <leader>wh <c-w>h
+noremap <leader>wl <c-w>l
+noremap <leader>wk <c-w>k
+noremap <leader>wj <c-w>j
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       ***  HERE BE PLUGINS  ***                         "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" -------- Markdown --------
+let g:markdown_fenced_languages = ['lua', 'java', 'python']
+set conceallevel=2
+
+" Language Server configs.  TODO Move these to lua
+lua << EOF
+require'lspconfig'.pyright.setup{}
+EOF
+
+lua << END
+require'lspconfig'.sumneko_lua.setup {
+  cmd = {"/usr/bin/lua-language-server"};
+ settings = {
+  Lua = {
+    runtime = {
+      version = 'Lua 5.4',
+      path = {
+        '?.lua',
+        '?/init.lua',
+        vim.fn.expand'~/.luarocks/share/lua/5.4/?.lua',
+        vim.fn.expand'~/.luarocks/share/lua/5.4/?/init.lua',
+        '/usr/share/5.4/?.lua',
+        '/usr/share/lua/5.4/?/init.lua'
+      }
+    },
+    diagnostics = {
+      globals = {'vim', 'use_rocks'},
+    },
+    workspace = {
+      library = {
+        [vim.fn.expand'~/.luarocks/share/lua/5.4'] = true,
+        ['/usr/share/lua/5.4'] = true,
+        [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+        [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true
+      }
+    }
+  }
+} 
+}
+END
+
+" --------- Telescope -------
+" lua require'telescope'.load_extension('harpoon')
+ lua require'telescope'.load_extension('spiral')
+
+" --------- Denite ----------
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> <Esc>
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <C-o>
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <C-t>
+  \ denite#do_map('do_action', 'tabopen')
+  nnoremap <silent><buffer><expr> <C-v>
+  \ denite#do_map('do_action', 'vsplit')
+  nnoremap <silent><buffer><expr> <C-h>
+  \ denite#do_map('do_action', 'split')
+endfunction
 let g:airline_powerline_fonts = 1
-autocmd BufEnter * lua require'completion'.on_attach()
-lua require'nvim_lsp'.julials.setup{on_attach=require'diagnostic'.on_attach}
+autocmd BufEnter *.lua lua require'completion'.on_attach()
+autocmd BufEnter *.py lua require'completion'.on_attach()
+"autocmd BufEnter * lua require'completion'.on_attach()
+"lua require'lspconfig'.sumneko_lua.setup{on_attach=require'completion'.on_attach}
+"lua require'nvim_lsp'.julials.setup{on_attach=require'diagnostic'.on_attach}
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
