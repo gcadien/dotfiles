@@ -9,6 +9,7 @@ set noerrorbells
 
 " IdeaVim extensions
 set easymotion
+set NERDTree
 
 " Window commands
 
@@ -56,8 +57,6 @@ nmap <leader>p :action GotoFile<CR>
 
 nmap <leader>oi :action OptimizeImports<CR>
 nmap <leader>a :action Annotate<CR>
-noremap <leader>ff <ESC>:action ReformatCode<CR>
-vnoremap <leader>ff <ESC>:action ReformatCode<CR>
 
 " --------- Files ----------
 
@@ -65,6 +64,14 @@ vnoremap <leader>ff <ESC>:action ReformatCode<CR>
 " plugin will run.
 nnoremap <leader>fs    :action SaveAll<CR>
 vnoremap <leader>fs    <Esc>:action SaveAll<CR>
+
+nmap <leader>ft :NERDTreeToggle<CR>
+"vnoremap <leader>ft <ESC>:NERDTreeToggle<CR>
+
+noremap <leader>ftc :NERDTreeFocus<CR>
+
+noremap <leader>ff  :action ReformatCode<CR>
+vnoremap <leader>ff <ESC>:action ReformatCode<CR>
 
 " Windows
 nmap <leader>wc :action VimWindowClose<CR> 
@@ -87,7 +94,6 @@ nnoremap <leader>sd :action ShowIntentionActions<CR><ESC>
 vnoremap <leader>sd <ESC>:action ShowIntentionActions<CR>
 
 " Run and Debug
-nmap <leader>ft :action RerunFailedTests<CR>
 nmap <leader>rr :action Rerun<CR>
 nmap <leader>rc :action RunClass<CR>
 nmap <leader>dc :action DebugClass<CR>
