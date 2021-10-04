@@ -15,7 +15,7 @@ filetype plugin indent on    " required
 "set ts=2
 "set shiftwidth=2
 "set number          " Show line numbers
-
+let g:pandoc#syntax#conceal#urls = 1
 "let mapleader = " "
 
 " --------- Files ---------

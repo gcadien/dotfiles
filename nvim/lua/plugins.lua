@@ -55,5 +55,6 @@ return require('packer').startup(function(use)
 --  }
   --use '~/projects/telescope-spiral.nvim'
   use_rocks 'penlight'
+  use_rocks 'inspect'
 end)
 

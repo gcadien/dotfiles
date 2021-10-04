@@ -94,15 +94,55 @@ map('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"', {expr = true, sile
 vim.opt.completeopt = {'menuone', 'noinsert', 'noselect'}
 
 -- Causes error
---vim.opt.shortmess:append({ 'c' })
+vim.opt.shortmess:append({ c = true })
 
+local actions = require('telescope.actions')
+local action_state = require "telescope.actions.state"
+local note_link = function()
+  require('telescope.builtin').find_files()
+end
+
+require('telescope').setup {
+  defaults = {
+    mappings = {
+      i = {
+        ["<esc>"] = actions.close
+      }
+    }
+  },
+  pickers = {
+    find_files = {
+      mappings = {
+        i = {
+          ["<C-l>"] = function(prompt)
+            local inspect = require('inspect')
+            actions.close(prompt)
+            print("prompt "..prompt)
+            local selection = action_state.get_selected_entry()
+            print(inspect(selection))
+            print(selection.value)
+            print(selection.cwd)
+
+            local buf = vim.api.nvim_get_current_buf()
+            print("Buff: "..buf)
+            print("Name: "..vim.api.nvim_buf_get_name(0))
+            local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+            print("Row: " .. row .. " Col: " .. col)
+            print(vim.fn.expand(selection.value))
+            vim.api.nvim_buf_set_text(buf, row-1,col,row-1,col, {"[".. selection.value .. "](" .. selection.cwd .. '/' ..selection.value..")"})
+          end
+        }
+      }
+    }
+  }
+}
 --
 -- Notes related vars and functions.
 --
 -- When this section gets large consider moving to separate notes.lua file and require here
 --
 local note_dir = "/home/geoff/NOTES"
-
+--vim.opt.pandoc.syntax.conceal.urls = 1
 vim.cmd('command! -nargs=? NoteNew :execute ":e" note_dir . "/<args>.md"')
 vim.cmd('command! NoteEdit :Telescope find_files cwd=' .. note_dir)
 vim.cmd('command! NoteQuick :e ' .. note_dir .. '/unfiled.md')
@@ -110,7 +150,7 @@ vim.cmd('command! NoteSearch :Telescope live_grep cwd=' .. note_dir)
 
 map('n', '<leader>ni', ':e ~/NOTES/index.md<CR>')
 map('n', '<leader>ne', ':NoteEdit<CR>')
-
+--map('n', '<leader>nl', "<cmd>lua require('notes').note_link()<CR>")
 -- Binding for reloading init.lua.
 map('n', '<leader>rl', ':source ~/dotfiles/nvim/init.lua<CR>', {silent = true})
 
@@ -132,6 +172,8 @@ local colors = {
   white = "#ebdbb2",
   orange = '#d65d0e',
   fg = '#ebdbb2',
+  fg0 = 'fbf1c7',
+  fg4 = '#a89984',
   bg = '#282828',
   bg1 = '#3c3836',
   bg2 = '#504945',
@@ -149,7 +191,7 @@ local arrow = {
 
 local mode_color = function()
   local mode_colors = {
-    [110] = colors.gray,
+    [110] = colors.fg4,
     [105] = colors.blue,
     [99] = colors.orange,
     [86] = colors.orange,
@@ -214,7 +256,7 @@ gls.left[1] = {
       local mode = vim.fn.mode():byte()
       return ' ' .. mode_alias[mode] .. ' '
     end,
-    highlight = {colors.bg, colors.gray},
+    highlight = {colors.bg, colors.gray, 'bold'},
     --separator = ' ',
     --separator_highlight ={colors.gray, colors.gray}
     --separator = '',
@@ -233,7 +275,7 @@ gls.left[2] = {
           return false
         end,
 
-        highlight = {colors.gray, colors.bg2}
+        highlight = {colors.fg1, colors.bg2}
     }
 }
 gls.left[3] = {
@@ -247,7 +289,7 @@ gls.left[3] = {
         end,
 
         separator = '',
-        highlight = {colors.gray, colors.bg2},
+        highlight = {colors.fg1, colors.bg2},
         separator_highlight = {colors.bg2, colors.bg1}
     }
 }
@@ -262,8 +304,10 @@ gls.left[4] = {
 }
 gls.right[1] = {
   BufferType = {
-    provider = function() return vim.bo.filetype end,
-    separator = ' '
+    provider = function() return vim.bo.filetype .. ' ' end,
+    separator = '',
+    highlight= {colors.gray, colors.bg1},
+    separator_highlight = {colors.bg1, colors.bg}
   }
 }
 
@@ -273,72 +317,16 @@ gls.right[2] = {
       vim.api.nvim_command('hi GalaxyLineColumn guibg='..mode_color())
       local line = vim.fn.line('.')
       local column = vim.fn.col('.')
-      return string.format(" %d:%d ", line, column)
+      return string.format("  %d:%d ", line, column)
     end,
 
-    separator = ' ',
+    --separator = ' ',
     highlight = {colors.bg, mode_color()},
+    separator_highlight = {colors.bg, mode_color()},
+    --separator_highlight = {colors.bg, colors.gray}
+   -- separator_highlight = function()
+   --   print("Separator Highlight".. mode_color())
+   --   return {mode_color(), colors.bg1}
+   -- end
   }
 }
-
-
---gls.left[2] = {
---  ViMode = {
---    provider = function()
---      -- auto change color according the vim mode
---      local alias = {
---          n = 'NORMAL',
---          i = 'INSERT',
---          c= 'COMMAND',
---          V= 'VISUAL',
---          [''] = 'VISUAL',
---          v ='VISUAL',
---          c  = 'COMMAND-LINE',
---          ['r?'] = ':CONFIRM',
---          rm = '--MORE',
---          R  = 'REPLACE',
---          Rv = 'VIRTUAL',
---          s  = 'SELECT',
---          S  = 'SELECT',
---          ['r']  = 'HIT-ENTER',
---          [''] = 'SELECT',
---          t  = 'TERMINAL',
---          ['!']  = 'SHELL',
---      }
---      local mode_color = {
---          n = colors.green,
---          i = colors.blue,v=colors.magenta,[''] = colors.blue,V=colors.blue,
---          c = colors.red,no = colors.magenta,s = colors.orange,S=colors.orange,
---          [''] = colors.orange,ic = colors.yellow,R = colors.purple,Rv = colors.purple,
---          cv = colors.red,ce=colors.red, r = colors.cyan,rm = colors.cyan, ['r?'] = colors.cyan,
---          ['!']  = colors.green,t = colors.green,
---          c  = colors.purple,
---          ['r?'] = colors.red,
---          ['r']  = colors.red,
---          rm = colors.red,
---          R  = colors.yellow,
---          Rv = colors.magenta,
---      }
---      local vim_mode = vim.fn.mode()
---      vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color[vim_mode])
---      return alias[vim_mode] .. '   '
---    end,
---    highlight = {colors.red,colors.line_bg,'bold'},
---  },
---}
-
---require('galaxyline').section.left[1]= {
---  FileSize = {
---    provider = 'FileSize',
---    condition = function()
---      if vim.fn.empty(vim.fn.expand('%:t')) ~= 1 then
---        return true
---      end
---      return false
---      end,
---    icon = '   ',
---    highlight = {colors.green,colors.purple},
---    separator = '',
---    separator_highlight = {colors.purple,colors.darkblue},
---  }
---}
