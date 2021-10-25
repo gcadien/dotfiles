@@ -1,13 +1,13 @@
 " NVIM CONFIG
-set nocompatible              " be iMproved, required
-filetype off                  " required
+"set nocompatible              " be iMproved, required
+"filetype off                  " required
 
 "lua require("plugins")
 
 "syntax enable
 "colorscheme gruvbox
 "set background=dark
-filetype plugin indent on    " required
+"filetype plugin indent on    " required
 
 "set expandtab       " Tabs are spaces
 "set ignorecase      " Case insensitive search
@@ -103,33 +103,34 @@ EOF
  "lua require'telescope'.load_extension('spiral')
 
 " --------- Denite ----------
-autocmd FileType denite call s:denite_my_settings()
-function! s:denite_my_settings() abort
-  nnoremap <silent><buffer><expr> <CR>
-  \ denite#do_map('do_action')
-  nnoremap <silent><buffer><expr> q
-  \ denite#do_map('quit')
-  nnoremap <silent><buffer><expr> <Esc>
-  \ denite#do_map('quit')
-  nnoremap <silent><buffer><expr> d
-  \ denite#do_map('do_action', 'delete')
-  nnoremap <silent><buffer><expr> p
-  \ denite#do_map('do_action', 'preview')
-  nnoremap <silent><buffer><expr> i
-  \ denite#do_map('open_filter_buffer')
-  nnoremap <silent><buffer><expr> <C-o>
-  \ denite#do_map('open_filter_buffer')
-  nnoremap <silent><buffer><expr> <C-t>
-  \ denite#do_map('do_action', 'tabopen')
-  nnoremap <silent><buffer><expr> <C-v>
-  \ denite#do_map('do_action', 'vsplit')
-  nnoremap <silent><buffer><expr> <C-h>
-  \ denite#do_map('do_action', 'split')
-endfunction
+"autocmd FileType denite call s:denite_my_settings()
+"function! s:denite_my_settings() abort
+"  nnoremap <silent><buffer><expr> <CR>
+"  \ denite#do_map('do_action')
+"  nnoremap <silent><buffer><expr> q
+"  \ denite#do_map('quit')
+"  nnoremap <silent><buffer><expr> <Esc>
+"  \ denite#do_map('quit')
+"  nnoremap <silent><buffer><expr> d
+"  \ denite#do_map('do_action', 'delete')
+"  nnoremap <silent><buffer><expr> p
+"  \ denite#do_map('do_action', 'preview')
+"  nnoremap <silent><buffer><expr> i
+"  \ denite#do_map('open_filter_buffer')
+"  nnoremap <silent><buffer><expr> <C-o>
+"  \ denite#do_map('open_filter_buffer')
+"  nnoremap <silent><buffer><expr> <C-t>
+"  \ denite#do_map('do_action', 'tabopen')
+"  nnoremap <silent><buffer><expr> <C-v>
+"  \ denite#do_map('do_action', 'vsplit')
+"  nnoremap <silent><buffer><expr> <C-h>
+"  \ denite#do_map('do_action', 'split')
+"endfunction
 "let g:airline_powerline_fonts = 1
 "autocmd BufEnter *.lua lua require'completion'.on_attach()
 "autocmd BufEnter *.py lua require'completion'.on_attach()
 "autocmd BufEnter *.jl lua require'completion'.on_attach()
+"autocmd BufEnter *.java lua require'completion'.on_attach()
 "lua require'lspconfig'.sumneko_lua.setup{on_attach=require'completion'.on_attach}
 "lua require'nvim_lsp'.julials.setup{on_attach=require'diagnostic'.on_attach}
 "inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -139,4 +140,4 @@ endfunction
 "set completeopt=menuone,noinsert,noselect
 
 " Avoid showing message extra message when using completion
-"set shortmess+=c
+set shortmess+=c

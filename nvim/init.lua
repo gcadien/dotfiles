@@ -1,4 +1,6 @@
 require("plugins")
+--require('options')
+
 local function map(mode, combo, mapping, opts)
   local options = {noremap = true}
   if opts then
@@ -82,19 +84,37 @@ require('lspconfig').sumneko_lua.setup {
 -- Julia
 require('lspconfig').julials.setup {}
 
+require'lspconfig'.jdtls.setup{
+cmd = {
+      '/usr/bin/java',
+	    '-Declipse.application=org.eclipse.jdt.ls.core.id1',
+	    '-Dosgi.bundles.defaultStartLevel=4',
+	    '-Declipse.product=org.eclipse.jdt.ls.core.product',
+	    '-Dlog.level=ALL',
+	    '-Xmx1G',
+      --'-jar /home/geoff/Applications/jdtls/plugins/org.eclipse.equinox.launcher_*.jar',
+      '-jar', '/home/geoff/Applications/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210908-1257.jar',
+	    '-configuration', '/home/geoff/Applications/jdtls/config_linux',
+	    '-data', '/home/geoff/.local/share/eclipse',
+	    '--add-modules=ALL-SYSTEM',
+	    '--add-opens java.base/java.util=ALL-UNNAMED',
+	    '--add-opens java.base/java.lang=ALL-UNNAMED'
+    }
+}
 --vim.g.airline_powerline_fonts = 1
 
-vim.cmd("autocmd BufEnter *.lua lua require'completion'.on_attach()")
-vim.cmd("autocmd BufEnter *.py lua require'completion'.on_attach()")
-vim.cmd("autocmd BufEnter *.jl lua require'completion'.on_attach()")
+--vim.cmd("autocmd BufEnter *.lua lua require'completion'.on_attach()")
+--vim.cmd("autocmd BufEnter *.py lua require'completion'.on_attach()")
+--vim.cmd("autocmd BufEnter *.jl lua require'completion'.on_attach()")
+--vim.cmd("autocmd BufEnter *.java lua require'completion'.on_attach()")
+--vim.cmd("autocmd BufEnter * lua require'completion'.on_attach()")
+--map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true, silent = true})
+--map('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"', {expr = true, silent = true})
 
-map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true, silent = true})
-map('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"', {expr = true, silent = true})
-
-vim.opt.completeopt = {'menuone', 'noinsert', 'noselect'}
+--vim.opt.completeopt = {'menuone', 'noinsert', 'noselect'}
 
 -- Causes error
-vim.opt.shortmess:append({ c = true })
+--vim.opt.shortmess:append({ c = true })
 
 local actions = require('telescope.actions')
 local action_state = require "telescope.actions.state"
@@ -330,3 +350,5 @@ gls.right[2] = {
    -- end
   }
 }
+
+
