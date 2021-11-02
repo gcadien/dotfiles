@@ -163,9 +163,15 @@ require('telescope').setup {
 --
 -- When this section gets large consider moving to separate notes.lua file and require here
 --
-local note_dir = "/home/geoff/NOTES"
+-- Should use a function or $HOME here
+local note_dir = vim.env.HOME .."/NOTES"
 --vim.opt.pandoc.syntax.conceal.urls = 1
 vim.cmd('command! -nargs=? NoteNew :execute ":e "' .. note_dir .. '"/<args>.md"')
+--print(vim.g.pandoc.syntax.codeblocks.embeds.langs)
+print(vim.g['pandoc#syntax#codeblocks#embeds#langs'])
+vim.g['pandoc#syntax#codeblocks#embeds#langs'] = {'json','html'}
+vim.g['pandoc#syntax#conceal#urls'] = 1
+vim.cmd('command! -nargs=? NoteNew :execute :e ' ..  note_dir .. '/<args>.md')
 vim.cmd('command! NoteEdit :Telescope find_files cwd=' .. note_dir)
 vim.cmd('command! NoteQuick :e ' .. note_dir .. '/unfiled.md')
 vim.cmd('command! NoteSearch :Telescope live_grep cwd=' .. note_dir)

@@ -11,6 +11,12 @@ set noerrorbells
 set easymotion
 set NERDTree
 
+nnoremap ' `
+nnoremap ` '
+
+" Buffer commands
+
+noremap <leader>bn :bn<CR>
 " Window commands
 
 vnoremap <leader>gi    <Esc>:action Git.Init<CR>
@@ -30,6 +36,9 @@ nmap <leader>nc :action NewClass<CR>
 nnoremap <leader>en :action GotoNextError<CR>
 vnoremap <leader>en :action GotoNextError<CR>
 
+nnoremap <leader>ed :action ShowErrorDescription<CR>
+vnoremap <leader>ed :action ShowErrorDescription<CR>
+
 " These create newlines like o and O but stay in normal mode
 nmap zj o<Esc>k
 nmap zk O<Esc>j
@@ -48,7 +57,7 @@ vnoremap <leader>bb <Esc>:action RecentFiles<CR>
 
 " Movement/Find commands
 nmap <leader>g :action GotoDeclaration<CR><ESC>
-nmap <leader>e :action ShowErrorDescription<CR><ESC>
+" nmap <leader>e :action ShowErrorDescription<CR><ESC>
 " nmap <leader>b :action Back<CR>
 " nmap <leader>f :action Forward<CR>
 " nmap <leader>gc :action GotoClass<CR>
@@ -65,13 +74,16 @@ nmap <leader>a :action Annotate<CR>
 nnoremap <leader>fs    :action SaveAll<CR>
 vnoremap <leader>fs    <Esc>:action SaveAll<CR>
 
-nmap <leader>ft :NERDTreeToggle<CR>
-"vnoremap <leader>ft <ESC>:NERDTreeToggle<CR>
+noremap <leader>ff  :action ReformatCode<CR>
+vnoremap <leader>ft <ESC>:NERDTreeToggle<CR>
 
 noremap <leader>ftc :NERDTreeFocus<CR>
 
-noremap <leader>ff  :action ReformatCode<CR>
-vnoremap <leader>ff <ESC>:action ReformatCode<CR>
+
+
+
+noremap <leader>ft :NERDTreeToggle<CR>
+vnoremap <leader>ft :action NERDTreeToggle<CR>
 
 " Windows
 nmap <leader>wc :action VimWindowClose<CR> 
