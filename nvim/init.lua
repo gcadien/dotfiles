@@ -1,6 +1,7 @@
 require("plugins")
 require("completion")
 require("statusline")
+require('org')
 --require('options')
 
 
@@ -52,6 +53,7 @@ vim.opt.conceallevel = 2
 -- Python
 --require('lspconfig').pyright.setup {}
 
+require('lspconfig').clojure_lsp.setup {}
 -- Lua
 require('lspconfig').sumneko_lua.setup {
   cmd = {"/usr/bin/lua-language-server"};

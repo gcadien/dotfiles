@@ -21,9 +21,15 @@ return require('packer').startup(function(use)
   --  'kyazdani42/nvim-tree.lua',
   --  requires = 'kyazdani42/nvim-web-devicons'
   --}
+  use 'Olical/conjure'
   use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+  }
+  use {
+    'kristijanhusak/orgmode.nvim', config = function()
+      require('orgmode').setup{}
+    end
   }
   --use 'jkramer/vim-checkbox'
   --use 'nvim-lua/plenary.nvim'

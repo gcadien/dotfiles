@@ -10,10 +10,12 @@ local cmp = require'cmp'
       },
       sources = {
         { name = 'nvim_lsp' },
-        { name = 'buffer'}
+        { name = 'buffer'},
+        { name = 'orgmode' },
       }
 
     })
+
 
   -- Setup lspconfig.
   require('lspconfig')["pylsp"].setup {
