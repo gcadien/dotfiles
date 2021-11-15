@@ -56,7 +56,7 @@ nnoremap <leader>bb      :action RecentFiles<CR>
 vnoremap <leader>bb <Esc>:action RecentFiles<CR>
 
 " Movement/Find commands
-nmap <leader>g :action GotoDeclaration<CR><ESC>
+nmap <leader>gd :action GotoDeclaration<CR><ESC>
 " nmap <leader>e :action ShowErrorDescription<CR><ESC>
 " nmap <leader>b :action Back<CR>
 " nmap <leader>f :action Forward<CR>
@@ -76,8 +76,8 @@ vnoremap <leader>fs    <Esc>:action SaveAll<CR>
 
 noremap <leader>ff  :action ReformatCode<CR>
 vnoremap <leader>ft <ESC>:NERDTreeToggle<CR>
-
 noremap <leader>ftc :NERDTreeFocus<CR>
+noremap <leader>fif :action FindInPath<CR>
 
 
 

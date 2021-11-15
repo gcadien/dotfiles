@@ -36,6 +36,7 @@ return require('packer').startup(function(use)
       require('orgmode').setup{}
     end
   }
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   --use 'jkramer/vim-checkbox'
   --use 'nvim-lua/plenary.nvim'
   --use 'plasticboy/vim-markdown'
