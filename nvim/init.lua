@@ -1,17 +1,17 @@
-require("plugins")
 require("completion")
 require("statusline")
 require('org')
+local util = require("util")
 --require('options')
 
 
-local function map(mode, combo, mapping, opts)
-  local options = {noremap = true}
-  if opts then
-    options = vim.tbl_extend('force', options, opts)
-  end
-  vim.api.nvim_set_keymap(mode, combo, mapping, options)
-end
+--local function map(mode, combo, mapping, opts)
+--  local options = {noremap = true}
+--  if opts then
+--    options = vim.tbl_extend('force', options, opts)
+--  end
+--  vim.api.nvim_set_keymap(mode, combo, mapping, options)
+--end
 
 -- Source old init.vim until converted to lua
 vim.cmd('source ~/.config/nvim/old_init.vim')
@@ -31,21 +31,22 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
 -- File related mappings
-map('n', '<leader>fs', ':write<CR>', {silent = true})
+util.map('n', '<leader>fs', ':write<CR>', {silent = true})
 
 -- Window related mappings
-map('n', '<leader>wq', '<c-w>q')
-map('n', '<leader>wv', '<c-w>v')
-map('n', '<leader>ws', '<c-w>s')
-map('n', '<leader>wh', '<c-w>h')
-map('n', '<leader>wl', '<c-w>l')
-map('n', '<leader>wk', '<c-w>k')
-map('n', '<leader>wj', '<c-w>j')
+util.map('n', '<leader>wq', '<c-w>q')
+util.map('n', '<leader>wv', '<c-w>v')
+util.map('n', '<leader>ws', '<c-w>s')
+util.map('n', '<leader>wh', '<c-w>h')
+util.map('n', '<leader>wl', '<c-w>l')
+util.map('n', '<leader>wk', '<c-w>k')
+util.map('n', '<leader>wj', '<c-w>j')
 
 
 -- Buffer related mappings
-map('n', '<leader>bb', ':Telescope buffers<CR>', {silent = true})
-map('n', '<leader>q', ':quit<CR>', {silent = true})
+util.map('n', '<leader>bb', ':Telescope buffers<CR>', {silent = true})
+util.map('n', '<leader>jj',':e ~/gdrive/org/index.org<CR>', {silent = true})
+util.map('n', '<leader>q', ':quit<CR>', {silent = true})
 
 vim.g.markdown_fenced_languages = {'lua', 'java', 'python'}
 vim.opt.conceallevel = 2
@@ -178,8 +179,8 @@ vim.cmd('command! NoteEdit :Telescope find_files cwd=' .. note_dir)
 vim.cmd('command! NoteQuick :e ' .. note_dir .. '/unfiled.md')
 vim.cmd('command! NoteSearch :Telescope live_grep cwd=' .. note_dir)
 
-map('n', '<leader>ni', ':e ~/NOTES/index.md<CR>')
-map('n', '<leader>ne', ':NoteEdit<CR>')
+util.map('n', '<leader>ni', ':e ~/NOTES/index.md<CR>')
+util.map('n', '<leader>ne', ':NoteEdit<CR>')
 --map('n', '<leader>nl', "<cmd>lua require('notes').note_link()<CR>")
 -- Binding for reloading init.lua.
-map('n', '<leader>rl', ':source ~/dotfiles/nvim/init.lua<CR>', {silent = true})
+util.map('n', '<leader>rl', ':source ~/dotfiles/nvim/init.lua<CR>', {silent = true})

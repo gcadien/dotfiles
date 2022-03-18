@@ -27,6 +27,11 @@ return require('packer').startup(function(use)
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
   }
   use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+
+  use {
     'kristijanhusak/orgmode.nvim', config = function()
       require('orgmode').setup{}
     end
