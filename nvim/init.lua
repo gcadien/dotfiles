@@ -1,12 +1,8 @@
-require("completion")
-require("statusline")
-require('org')
-local util = require("util")
 --require('options')
-
 
 --local function map(mode, combo, mapping, opts)
 --  local options = {noremap = true}
+--  
 --  if opts then
 --    options = vim.tbl_extend('force', options, opts)
 --  end
@@ -31,6 +27,13 @@ vim.opt.clipboard="unnamedplus"
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
+-- import here after vim global options are set
+require("completion")
+require("statusline")
+require('org')
+
+local util = require("util")
+
 -- File related mappings
 util.map('n', '<leader>fs', ':write<CR>', {silent = true})
 
@@ -46,7 +49,6 @@ util.map('n', '<leader>wj', '<c-w>j')
 
 -- Buffer related mappings
 util.map('n', '<leader>bb', ':Telescope buffers<CR>', {silent = true})
-util.map('n', '<leader>jj',':e ~/gdrive/org/index.org<CR>', {silent = true})
 util.map('n', '<leader>q', ':quit<CR>', {silent = true})
 
 vim.g.markdown_fenced_languages = {'lua', 'java', 'python'}
@@ -56,36 +58,37 @@ vim.opt.conceallevel = 2
 --require('lspconfig').pyright.setup {}
 
 require('lspconfig').clojure_lsp.setup {}
+
 -- Lua
-require('lspconfig').sumneko_lua.setup {
-  cmd = {"/usr/bin/lua-language-server"};
-  settings = {
-    Lua = {
-      runtime = {
-        version = 'Lua 5.4',
-        path = {
-          '?.lua',
-          '?/init.lua',
-          vim.fn.expand'~/.luarocks/share/lua/5.4/?.lua',
-          vim.fn.expand'~/.luarocks/share/lua/5.4/?/init.lua',
-          '/usr/share/5.4/?.lua',
-          '/usr/share/lua/5.4/?/init.lua'
-        }
-      },
-      diagnostics = {
-        globals = {'vim', 'use_rocks'},
-      },
-      workspace = {
-        library = {
-          [vim.fn.expand'~/.luarocks/share/lua/5.4'] = true,
-          ['/usr/share/lua/5.4'] = true,
-          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-          [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true
-        }
-      }
-    }
-  }
-}
+--require('lspconfig').sumneko_lua.setup {
+--  cmd = {"/usr/bin/lua-language-server"};
+--  settings = {
+--    Lua = {
+--      runtime = {
+--        version = 'Lua 5.4',
+--        path = {
+--          '?.lua',
+--          '?/init.lua',
+--          vim.fn.expand'~/.luarocks/share/lua/5.4/?.lua',
+--          vim.fn.expand'~/.luarocks/share/lua/5.4/?/init.lua',
+--          '/usr/share/5.4/?.lua',
+--          '/usr/share/lua/5.4/?/init.lua'
+--        }
+--      },
+--      diagnostics = {
+--        globals = {'vim', 'use_rocks'},
+--      },
+--      workspace = {
+--        library = {
+--          [vim.fn.expand'~/.luarocks/share/lua/5.4'] = true,
+--          ['/usr/share/lua/5.4'] = true,
+--          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+--          [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true
+--        }
+--      }
+--    }
+--  }
+--}
 
 -- Julia
 --require('lspconfig').julials.setup {}

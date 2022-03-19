@@ -1,5 +1,6 @@
 -- Load custom tree-sitter grammar for org filetype
 require('orgmode').setup_ts_grammar()
+
 -- Tree-sitter configuration
 require'nvim-treesitter.configs'.setup {
   -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
@@ -12,8 +13,8 @@ require'nvim-treesitter.configs'.setup {
 }
 
 require('orgmode').setup({
-  org_agenda_file = '~/Documents/grdrive/org',
-  org_default_notes_file = '~/Documents/grdrive/org/refile.org'
+  org_agenda_files = {'~/Documents/gdrive/org/*'},
+  org_default_notes_file = '~/Documents/gdrive/org/refile.org',
 })
 
 local function dump(o)
@@ -31,9 +32,8 @@ end
 
 local util = require('util')
 local config = require('orgmode.config')
-print("OrgMode test: " .. config.opts.org_agenda_files[1])
-print('NotesFile: ' .. config.opts.org_default_notes_file)
+--print("OrgMode test: " .. config.opts.org_agenda_files[1])
+--print('NotesFile: ' .. config.opts.org_default_notes_file)
 --print('agenda files ' .. orgmode.org_agenda_files[1])
 --util.map('n', '<leader>oi',':e '.. config.opts.org_agenda_files[1] .. '/index.org<CR>', {silent = true})
-util.map('n', '<leader>jj',':e ~/gdrive/org/index.org<CR>', {silent = true})
-
+util.map('n', '<leader>oi',':e ~/Documents/gdrive/org/index.org<CR>', {silent = true})

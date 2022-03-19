@@ -47,6 +47,9 @@ nmap zk O<Esc>j
 nnoremap <leader>gc      :action GotoClass<CR>
 vnoremap <leader>gc <Esc>:action GotoClass<CR>
 
+nnoremap <leader>gb      :action Back<CR>
+vnoremap <leader>gb <Esc>:action Back<CR>
+
 " Searching
 noremap <leader>sc :action GotoClass<CR>
 vnoremap <leader>sc <Esc>:action GotoClass<CR>
