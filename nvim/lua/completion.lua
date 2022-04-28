@@ -11,7 +11,7 @@ local cmp = require'cmp'
       sources = {
         { name = 'nvim_lsp' },
         { name = 'buffer'},
-        { name = 'orgmode' },
+        --{ name = 'orgmode' },
       }
 
     })

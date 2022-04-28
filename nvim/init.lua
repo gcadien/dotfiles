@@ -1,5 +1,5 @@
 --require('options')
-
+require('plugins')
 --local function map(mode, combo, mapping, opts)
 --  local options = {noremap = true}
 --  

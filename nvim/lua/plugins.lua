@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/nvim-cmp'
   --use 'masukomi/vim-markdown-folding'
+  use 'dag/vim-fish'
   use 'sirtaj/vim-openscad'
   --use {
   --  'kyazdani42/nvim-tree.lua',
