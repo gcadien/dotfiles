@@ -27,14 +27,11 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
   }
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
 
+  use {'nvim-treesitter/nvim-treesitter'}
   use {
-    'kristijanhusak/orgmode.nvim', config = function()
-      require('orgmode').setup{}
+    'nvim-orgmode/orgmode', config = function()
+        require('orgmode').setup{}
     end
   }
   --use 'jkramer/vim-checkbox'
