@@ -6,3 +6,8 @@ end
 if status is-login
 end
 
+# Key bindings
+
+# binds Ctrl-Meta-M to monitor switch function
+bind \e\[109\;13u mswitch
+

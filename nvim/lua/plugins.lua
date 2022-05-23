@@ -12,9 +12,9 @@ return require('packer').startup(function(use)
   --use {'andrejlevkovitch/vim-lua-format'}
   --use {'Shougo/denite.nvim',  run = ':UpdateRemotePlugins' }
   --use 'nvim-lua/completion-nvim'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/nvim-cmp'
+  --use 'hrsh7th/cmp-nvim-lsp'
+  --use 'hrsh7th/cmp-buffer'
+  --use 'hrsh7th/nvim-cmp'
   --use 'masukomi/vim-markdown-folding'
   use 'dag/vim-fish'
   use 'sirtaj/vim-openscad'
@@ -38,7 +38,7 @@ return require('packer').startup(function(use)
   --use 'nvim-lua/plenary.nvim'
   --use 'plasticboy/vim-markdown'
   --use 'godlygeek/tabular'
-  use 'mfussenegger/nvim-jdtls'
+  --use 'mfussenegger/nvim-jdtls'
   use 'neovim/nvim-lspconfig'
   use 'gruvbox-community/gruvbox'
   --  Look into configuring galaxyline later
