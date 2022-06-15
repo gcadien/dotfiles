@@ -1,5 +1,5 @@
 require "hs.application"
-require "hs.window.filter"
+--require "hs.window.filter"
 require "key-mapping"
 require "bitwarden"
 require "wm"
@@ -20,6 +20,9 @@ local logger = hs.logger.new('hammerspoon','debug')
 logger.i("Hello, world")
 
 hs.hotkey.bind({"cmd", "shift"}, "l", bitwarden)
+hs.hotkey.bind({"ctrl", "cmd"}, "m", function()
+  hs.execute("/usr/local/bin/ddcctl -d 1 -i 17")
+end)
 
 -- move current window to the space sp
 --function moveCurrentWindowToSpace(sp)
@@ -275,9 +278,9 @@ function applicationWatcher(appName, eventType, appObject)
   end
 end
 
-local wf = hs.window.filter
-wf_iterm = wf.new{'iTerm2'}
-hs.alert(wf_iterm)
+--local wf = hs.window.filter
+--wf_iterm = wf.new{'iTerm2'}
+--hs.alert(wf_iterm)
 --wf_iterm:subscribe(wf.windowCreated, function() hs.alert("Created") end)
 
 

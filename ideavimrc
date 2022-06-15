@@ -50,6 +50,9 @@ vnoremap <leader>gc <Esc>:action GotoClass<CR>
 nnoremap <leader>gb      :action Back<CR>
 vnoremap <leader>gb <Esc>:action Back<CR>
 
+nnoremap <leader>gm      :action FileStructurePopup<CR>
+vnoremap <leader>gm <Esc>:action FileStructurePopup<CR>
+
 " Searching
 noremap <leader>sc :action GotoClass<CR>
 vnoremap <leader>sc <Esc>:action GotoClass<CR>
