@@ -74,16 +74,6 @@ _G.packer_plugins = {
     path = "/Users/b07465a/.local/share/nvim/site/pack/packer/start/JuliaFormatter.vim",
     url = "https://github.com/kdheepak/JuliaFormatter.vim"
   },
-  ["cmp-buffer"] = {
-    loaded = true,
-    path = "/Users/b07465a/.local/share/nvim/site/pack/packer/start/cmp-buffer",
-    url = "https://github.com/hrsh7th/cmp-buffer"
-  },
-  ["cmp-nvim-lsp"] = {
-    loaded = true,
-    path = "/Users/b07465a/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
-    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
-  },
   conjure = {
     loaded = true,
     path = "/Users/b07465a/.local/share/nvim/site/pack/packer/start/conjure",
@@ -103,11 +93,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/b07465a/.local/share/nvim/site/pack/packer/start/julia-vim",
     url = "https://github.com/JuliaEditorSupport/julia-vim"
-  },
-  ["nvim-cmp"] = {
-    loaded = true,
-    path = "/Users/b07465a/.local/share/nvim/site/pack/packer/start/nvim-cmp",
-    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -165,16 +150,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/b07465a/.local/share/nvim/site/pack/packer/start/vim-openscad",
     url = "https://github.com/sirtaj/vim-openscad"
-  },
-  ["vim-pandoc"] = {
-    loaded = true,
-    path = "/Users/b07465a/.local/share/nvim/site/pack/packer/start/vim-pandoc",
-    url = "https://github.com/vim-pandoc/vim-pandoc"
-  },
-  ["vim-pandoc-syntax"] = {
-    loaded = true,
-    path = "/Users/b07465a/.local/share/nvim/site/pack/packer/start/vim-pandoc-syntax",
-    url = "https://github.com/vim-pandoc/vim-pandoc-syntax"
   }
 }
 

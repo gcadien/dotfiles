@@ -82,7 +82,6 @@ vnoremap <leader>fs    <Esc>:action SaveAll<CR>
 
 noremap <leader>ff  :action ReformatCode<CR>
 vnoremap <leader>ft <ESC>:NERDTreeToggle<CR>
-noremap <leader>ftc :NERDTreeFocus<CR>
 noremap <leader>fif :action FindInPath<CR>
 
 

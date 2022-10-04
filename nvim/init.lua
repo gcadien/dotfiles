@@ -28,7 +28,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
 -- import here after vim global options are set
-require("completion")
+--require("completion")
 require("statusline")
 require('org')
 
