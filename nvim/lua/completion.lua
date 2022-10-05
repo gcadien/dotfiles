@@ -17,10 +17,10 @@ local cmp = require'cmp'
     })
 
 
-  -- Setup lspconfig.
-  require('lspconfig')["pylsp"].setup {
-    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-}
-  require('lspconfig')["jdtls"].setup {
-    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-}
+--  -- Setup lspconfig.
+--  require('lspconfig')["pylsp"].setup {
+--    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+--}
+--  require('lspconfig')["jdtls"].setup {
+--    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+--}

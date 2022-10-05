@@ -27,6 +27,7 @@ vim.opt.clipboard="unnamedplus"
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
+vim.g.neoformat_openscad_clangformat = {exe = 'clang-format'}
 -- import here after vim global options are set
 require("completion")
 require("statusline")
@@ -125,46 +126,46 @@ require('lspconfig').clojure_lsp.setup {}
 -- Causes error
 --vim.opt.shortmess:append({ c = true })
 
-local actions = require('telescope.actions')
-local action_state = require "telescope.actions.state"
-local note_link = function()
-  require('telescope.builtin').find_files()
-end
-
-require('telescope').setup {
-  defaults = {
-    mappings = {
-      i = {
-        ["<esc>"] = actions.close
-      }
-    }
-  },
-  pickers = {
-    find_files = {
-      mappings = {
-        i = {
-          ["<C-l>"] = function(prompt)
-            local inspect = require('inspect')
-            actions.close(prompt)
-            print("prompt "..prompt)
-            local selection = action_state.get_selected_entry()
-            print(inspect(selection))
-            print(selection.value)
-            print(selection.cwd)
-
-            local buf = vim.api.nvim_get_current_buf()
-            print("Buff: "..buf)
-            print("Name: "..vim.api.nvim_buf_get_name(0))
-            local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-            print("Row: " .. row .. " Col: " .. col)
-            print(vim.fn.expand(selection.value))
-            vim.api.nvim_buf_set_text(buf, row-1,col,row-1,col, {"[".. selection.value .. "](" .. selection.cwd .. '/' ..selection.value..")"})
-          end
-        }
-      }
-    }
-  }
-}
+--local actions = require('telescope.actions')
+--local action_state = require "telescope.actions.state"
+--local note_link = function()
+--  require('telescope.builtin').find_files()
+--end
+--
+--require('telescope').setup {
+--  defaults = {
+--    mappings = {
+--      i = {
+--        ["<esc>"] = actions.close
+--      }
+--    }
+--  },
+--  pickers = {
+--    find_files = {
+--      mappings = {
+--        i = {
+--          ["<C-l>"] = function(prompt)
+--            local inspect = require('inspect')
+--            actions.close(prompt)
+--            print("prompt "..prompt)
+--            local selection = action_state.get_selected_entry()
+--            print(inspect(selection))
+--            print(selection.value)
+--            print(selection.cwd)
+--
+--            local buf = vim.api.nvim_get_current_buf()
+--            print("Buff: "..buf)
+--            print("Name: "..vim.api.nvim_buf_get_name(0))
+--            local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+--            print("Row: " .. row .. " Col: " .. col)
+--            print(vim.fn.expand(selection.value))
+--            vim.api.nvim_buf_set_text(buf, row-1,col,row-1,col, {"[".. selection.value .. "](" .. selection.cwd .. '/' ..selection.value..")"})
+--          end
+--        }
+--      }
+--    }
+--  }
+--}
 --
 -- Notes related vars and functions.
 --
@@ -183,8 +184,8 @@ require('telescope').setup {
 --vim.cmd('command! NoteQuick :e ' .. note_dir .. '/unfiled.md')
 --vim.cmd('command! NoteSearch :Telescope live_grep cwd=' .. note_dir)
 
-util.map('n', '<leader>ni', ':e ~/NOTES/index.md<CR>')
-util.map('n', '<leader>ne', ':NoteEdit<CR>')
+util.map('n', '<leader>ni', ':e ~/Documents/gdrive/index.org<CR>')
+--util.map('n', '<leader>ne', ':NoteEdit<CR>')
 --map('n', '<leader>nl', "<cmd>lua require('notes').note_link()<CR>")
 -- Binding for reloading init.lua.
 util.map('n', '<leader>rl', ':source ~/dotfiles/nvim/init.lua<CR>', {silent = true})

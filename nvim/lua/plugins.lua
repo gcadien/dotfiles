@@ -13,8 +13,8 @@ return require('packer').startup(function(use)
   --use {'Shougo/denite.nvim',  run = ':UpdateRemotePlugins' }
   --use 'nvim-lua/completion-nvim'
   --use 'hrsh7th/cmp-nvim-lsp'
-  --use 'hrsh7th/cmp-buffer'
-  --use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/nvim-cmp'
   --use 'masukomi/vim-markdown-folding'
   use 'dag/vim-fish'
   use 'sirtaj/vim-openscad'
@@ -28,7 +28,16 @@ return require('packer').startup(function(use)
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
   }
 
+  -- NeovimFormat
+  use 'sbdchd/neoformat'
   use {'nvim-treesitter/nvim-treesitter'}
+  --use {
+  --  "akinsho/org-bullets.nvim", config = function()
+  --    require("org-bullets").setup {
+  --      symbols = { "◉", "○", "✸", "✿" }
+  --    }
+  --  end
+  --}
   use {
     'nvim-orgmode/orgmode', config = function()
         require('orgmode').setup{}

@@ -5,10 +5,10 @@ set smartcase
 set ignorecase
 set showmode
 set visualbell
-set noerrorbells
+"set noerrorbells
 
 " IdeaVim extensions
-set easymotion
+"set easymotion
 set NERDTree
 
 nnoremap ' `
@@ -115,6 +115,15 @@ nmap <leader>dc :action DebugClass<CR>
 nmap <leader>tb :action ToggleLineBreakpoint<CR>
 nmap <leader>s  :action StepOver<CR>
 nmap <leader>dr :action Resume<CR>
+
+" Window related mappings
+map <leader>wq <c-w>q
+map <leader>wv <c-w>v
+map <leader>ws <c-w>s
+map <leader>wh <c-w>h
+map <leader>wl <c-w>l
+map <leader>wk <c-w>k
+map <leader>wj <c-w>j
 
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
