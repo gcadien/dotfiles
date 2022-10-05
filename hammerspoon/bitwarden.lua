@@ -35,7 +35,7 @@ function bwLogin()
   local password = passwordPrompt()
   --local mfaCode = mfaCodePrompt()
   logger.i("Logging into Bitwarden")
-  local sessionId, status, typ, rc = hs.execute("/usr/local/bin/bw login marty.christiansen@gmail.com " .. password .. " --code " .. mfaCode .. " --raw", true)
+  local sessionId, status, typ, rc = hs.execute("/usr/local/bin/bw login marty.christiansen@gmail.com " .. password .. " --code " .. " --raw", true)
   if status then
     bwSessionId = sessionId
     logger.i("Set bwSessionId: " .. bwSessionId)

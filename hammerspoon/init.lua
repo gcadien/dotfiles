@@ -1,8 +1,9 @@
 require "hs.application"
-require "hs.window.filter"
+--require "hs.window.filter"
 require "key-mapping"
 require "bitwarden"
 require "wm"
+require "hs.spaces"
 --spaces = require("hs._asm.undocumented.spaces")
 hs.window.animationDuration = 0
 
@@ -18,9 +19,69 @@ Container = {
 
 local logger = hs.logger.new('hammerspoon','debug')
 logger.i("Hello, world")
-
+logger.i(hs.spaces.allSpaces())
+hs.spaces.gotoSpace(12)
 hs.hotkey.bind({"cmd", "shift"}, "l", bitwarden)
 
+-- This allows switching hdmi inputs.  Mac is on HDMI2
+-- so this switches to HDMI1
+hs.hotkey.bind({"ctrl", "cmd"}, "m", function()
+  hs.execute("/usr/local/bin/ddcctl -d 1 -i 17")
+end)
+
+hs.hotkey.bind({"cmd", "alt"}, "v", function()
+  hs.caffeinate.set("displayIdle", true, true)
+  hs.caffeinate.set("systemIdle", true, true)
+  hs.caffeinate.set("system", true, true)
+  hs.alert.show("Preventing Sleep")
+end)
+hs.hotkey.bind({"cmd", "alt"}, "c", function()
+  hs.caffeinate.set("displayIdle", false, true)
+  hs.caffeinate.set("systemIdle", false, true)
+  hs.caffeinate.set("system", false, true)
+  hs.alert.show("Allowing Sleep")
+end)
+
+hs.hotkey.bind({}, "F12", function()
+  local app = hs.application.get("kitty")
+
+  if app then
+    if not app:mainWindow() then
+      hs.alert.show("Not Main window") 
+    else
+      hs.alert.show("main kitty window")
+      local win = app:findWindow("Notes")
+      logger.i(#(app:allWindows()))
+      for _,w in ipairs(app:allWindows()) do
+        logger.i(w)
+      end 
+      if win then
+        logger.i("Found Notes window")
+      else
+        logger.i("Could not find Notes window.  Opening.")
+        --logger.i(app:selectMenuItem({"Shell", "New OS Window"}))
+        --logger.i(app:focusedWindow().id)
+        --local stdout, status, typ, rc = hs.execute("/usr/local/bin/kitty @ set-window-title --match state:focused Notes", true)
+        os.execute("/Applications/kitty.app/Contents/MacOS/kitty --title Notes nvim &", true)
+        --os.execute("/usr/local/bin/kitty --title Notes &", true)
+        logger.i("Done!!")
+      end
+    end
+  end
+  --        app:selectMenuItem({"kitty", "New OS window"})
+  --    elseif app:isFrontmost() then
+  --        app:hide()
+  --    else
+  --        app:activate()
+  --    end
+  --else
+  --    hs.application.launchOrFocus("kitty")
+  --    app = hs.application.get("kitty")
+  --end
+
+  --app:mainWindow():moveToUnit'[100,50,0,0]'
+  --app:mainWindow().setShadows(false)
+end)
 -- move current window to the space sp
 --function moveCurrentWindowToSpace(sp)
 --    local log = hs.logger.new('mymodule','debug')
@@ -275,9 +336,9 @@ function applicationWatcher(appName, eventType, appObject)
   end
 end
 
-local wf = hs.window.filter
-wf_iterm = wf.new{'iTerm2'}
-hs.alert(wf_iterm)
+--local wf = hs.window.filter
+--wf_iterm = wf.new{'iTerm2'}
+--hs.alert(wf_iterm)
 --wf_iterm:subscribe(wf.windowCreated, function() hs.alert("Created") end)
 
 

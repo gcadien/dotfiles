@@ -63,8 +63,8 @@ return require('packer').startup(function(use)
   --use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
   --use 'vim-airline/vim-airline'
   --use 'vim-airline/vim-airline-themes'
-  use 'vim-pandoc/vim-pandoc'
-  use 'vim-pandoc/vim-pandoc-syntax'
+  --use 'vim-pandoc/vim-pandoc'
+  --use 'vim-pandoc/vim-pandoc-syntax'
   use 'JuliaEditorSupport/julia-vim'
   use 'kdheepak/JuliaFormatter.vim'
 --  use {
