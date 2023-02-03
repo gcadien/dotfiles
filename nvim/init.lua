@@ -29,7 +29,7 @@ vim.g.maplocalleader = ","
 
 vim.g.neoformat_openscad_clangformat = {exe = 'clang-format'}
 -- import here after vim global options are set
---require("completion")
+require("completion")
 require("statusline")
 require('org')
 
