@@ -10,9 +10,9 @@ require('plugins')
 --end
 
 -- Source old init.vim until converted to lua
-vim.cmd('source ~/.config/nvim/old_init.vim')
+--vim.cmd('source ~/.config/nvim/old_init.vim')
+
 vim.cmd("set termguicolors")
-vim.cmd('syntax enable')
 vim.opt.background = 'dark'
 vim.cmd('colorscheme gruvbox')
 
@@ -27,8 +27,6 @@ vim.opt.clipboard="unnamedplus"
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
-vim.g.neoformat_openscad_clangformat = {exe = 'clang-format'}
--- import here after vim global options are set
 require("completion")
 require("statusline")
 require('org')
@@ -37,6 +35,7 @@ local util = require("util")
 
 -- File related mappings
 util.map('n', '<leader>fs', ':write<CR>', {silent = true})
+util.map('n', '<leader>fo', ':Telescope find_files<CR>', {silent = true})
 
 -- Window related mappings
 util.map('n', '<leader>wq', '<c-w>q')
@@ -52,13 +51,8 @@ util.map('n', '<leader>wj', '<c-w>j')
 util.map('n', '<leader>bb', ':Telescope buffers<CR>', {silent = true})
 util.map('n', '<leader>q', ':quit<CR>', {silent = true})
 
-vim.g.markdown_fenced_languages = {'lua', 'java', 'python'}
-vim.opt.conceallevel = 2
+--vim.opt.conceallevel = 2
 
--- Python
---require('lspconfig').pyright.setup {}
-
-require('lspconfig').clojure_lsp.setup {}
 
 -- Lua
 --require('lspconfig').sumneko_lua.setup {
@@ -91,33 +85,8 @@ require('lspconfig').clojure_lsp.setup {}
 --  }
 --}
 
--- Julia
---require('lspconfig').julials.setup {}
-
---require'lspconfig'.jdtls.setup{
---cmd = {
---      '/usr/bin/java',
---	    '-Declipse.application=org.eclipse.jdt.ls.core.id1',
---	    '-Dosgi.bundles.defaultStartLevel=4',
---	    '-Declipse.product=org.eclipse.jdt.ls.core.product',
---	    '-Dlog.level=ALL',
---	    '-Xmx1G',
---      --'-jar /home/geoff/Applications/jdtls/plugins/org.eclipse.equinox.launcher_*.jar',
---      '-jar', '/home/geoff/Applications/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210908-1257.jar',
---	    '-configuration', '/home/geoff/Applications/jdtls/config_linux',
---	    '-data', '/home/geoff/.local/share/eclipse',
---	    '--add-modules=ALL-SYSTEM',
---	    '--add-opens java.base/java.util=ALL-UNNAMED',
---	    '--add-opens java.base/java.lang=ALL-UNNAMED'
---    }
---}
 --vim.g.airline_powerline_fonts = 1
 
---vim.cmd("autocmd BufEnter *.lua lua require'completion'.on_attach()")
---vim.cmd("autocmd BufEnter *.py lua require'completion'.on_attach()")
---vim.cmd("autocmd BufEnter *.jl lua require'completion'.on_attach()")
---vim.cmd("autocmd BufEnter *.java lua require'completion'.on_attach()")
---vim.cmd("autocmd BufEnter * lua require'completion'.on_attach()")
 --map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true, silent = true})
 --map('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"', {expr = true, silent = true})
 
@@ -184,8 +153,8 @@ require('lspconfig').clojure_lsp.setup {}
 --vim.cmd('command! NoteQuick :e ' .. note_dir .. '/unfiled.md')
 --vim.cmd('command! NoteSearch :Telescope live_grep cwd=' .. note_dir)
 
-util.map('n', '<leader>ni', ':e ~/Documents/gdrive/index.org<CR>')
+--util.map('n', '<leader>ni', ':e ~/Documents/gdrive/index.org<CR>')
 --util.map('n', '<leader>ne', ':NoteEdit<CR>')
 --map('n', '<leader>nl', "<cmd>lua require('notes').note_link()<CR>")
 -- Binding for reloading init.lua.
-util.map('n', '<leader>rl', ':source ~/dotfiles/nvim/init.lua<CR>', {silent = true})
+--util.map('n', '<leader>rl', ':source ~/dotfiles/nvim/init.lua<CR>', {silent = true})
