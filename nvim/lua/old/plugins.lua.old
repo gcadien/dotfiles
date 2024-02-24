@@ -12,7 +12,8 @@ return require('packer').startup(function(use)
   --use {'andrejlevkovitch/vim-lua-format'}
   --use {'Shougo/denite.nvim',  run = ':UpdateRemotePlugins' }
   --use 'nvim-lua/completion-nvim'
-  --use 'hrsh7th/cmp-nvim-lsp'
+  use 'neovim/nvim-lspconfig'
+  use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/nvim-cmp'
   --use 'masukomi/vim-markdown-folding'
@@ -31,13 +32,16 @@ return require('packer').startup(function(use)
   -- NeovimFormat
   use 'sbdchd/neoformat'
   use {'nvim-treesitter/nvim-treesitter'}
-  --use {
-  --  "akinsho/org-bullets.nvim", config = function()
-  --    require("org-bullets").setup {
-  --      symbols = { "◉", "○", "✸", "✿" }
-  --    }
-  --  end
-  --}
+  use {
+    "akinsho/org-bullets.nvim", config = function()
+      require("org-bullets").setup {
+        symbols = {
+          list = "•",
+          headlines = { "◉", "○", "✸", "✿" }
+        }
+      }
+    end
+  }
   use {
     'nvim-orgmode/orgmode', config = function()
         require('orgmode').setup{}
@@ -48,7 +52,6 @@ return require('packer').startup(function(use)
   --use 'plasticboy/vim-markdown'
   --use 'godlygeek/tabular'
   --use 'mfussenegger/nvim-jdtls'
-  use 'neovim/nvim-lspconfig'
   use 'gruvbox-community/gruvbox'
   --  Look into configuring galaxyline later
   use {
@@ -76,7 +79,7 @@ return require('packer').startup(function(use)
 --    rocks = {'http', 'lunajson'}
 --  }
   --use '~/projects/telescope-spiral.nvim'
-  use_rocks 'penlight'
-  use_rocks 'inspect'
+  --use_rocks 'penlight'
+  --use_rocks 'inspect'
 end)
 

@@ -170,7 +170,8 @@ bindsym $mod+r mode "resize"
 
 #for_window [title="KScad"] floating enable, move right 330px,move down 70px
 #for_window [title="KScad"] floating enable, resize set width 1390 px height 770 px
-#for_window [title="SwingTerminalFrame"] floating enable move right 200 px, move down 70px
+#for_window [title="SwingTerminalFrame"] floating enable move right 500 px, move down 70px
+for_window [title="SwingTerminalFrame"] floating enable move right 1000 px, move down 200 px
 #for_window [title="SwingTerminalFrame"] move right 200 px, move down 70px
 #
 # Window Title Colors

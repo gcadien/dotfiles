@@ -1,0 +1,127 @@
+46629 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Open file://
+88072 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Open 2 file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+21308 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Open 3 file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+43419 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Save file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+54182 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+55731 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+55915 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+56214 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+56522 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+56717 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+57084 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+57247 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+57641 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+57832 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+58062 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+58855 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+59228 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+59417 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+61331 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+62180 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+62605 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+62927 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+63094 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+63242 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+63392 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+63712 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+65140 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+65289 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+67107 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+67618 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+68430 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+69130 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+69280 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+69870 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+70079 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+70241 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+70390 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+70540 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+70690 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+70846 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+71219 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+71368 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+71518 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+72144 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+72585 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+72733 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+73310 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+73516 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+73678 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+74748 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Save file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+78640 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Open 3 file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+109270 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+109460 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+110017 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+110179 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+110435 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+110760 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+112385 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+113793 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+114009 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+114218 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+116836 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+121050 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+121706 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+121918 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+122312 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+122568 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+122732 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+123616 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+124161 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+125371 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+126063 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+141250 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+141439 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+142687 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Save file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+18149 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Open 3 file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+35045 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+35351 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+35983 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+36433 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+39595 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+40271 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+40732 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+40952 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+41199 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+41438 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+41667 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+42249 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+42410 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+42976 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+43181 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+43417 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+43583 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+44131 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+44339 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+44909 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+45443 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+46983 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+47638 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+47791 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+47962 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+149013 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+149415 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+150111 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+150629 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+151059 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+151297 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+176075 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+1968134 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Save file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+67060 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Open 3 file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+21014 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Open 3 file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+28664 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+28999 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+29148 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+29302 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+30875 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+31024 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+31844 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+31994 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+33061 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+33284 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Change file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+15496 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Open 3 file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+14104 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Did Open 3 file:///home/geoff/dotfiles/nvim/ftdetect/test.eu
+23877 [pool-1-thread-1] DEBUG o.t.e.lsp.EuropaTextDocumentService - Definition: Position [
+  line = 13
+  character = 0
+]

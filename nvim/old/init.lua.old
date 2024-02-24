@@ -1,0 +1,164 @@
+--require('options')
+require('plugins')
+--local function map(mode, combo, mapping, opts)
+--  local options = {noremap = true}
+--  
+--  if opts then
+--    options = vim.tbl_extend('force', options, opts)
+--  end
+--  vim.api.nvim_set_keymap(mode, combo, mapping, options)
+--end
+
+-- Source old init.vim until converted to lua
+--vim.cmd('source ~/.config/nvim/old_init.vim')
+
+vim.cmd("set termguicolors")
+vim.opt.background = 'dark'
+vim.cmd('colorscheme gruvbox')
+
+vim.opt.expandtab = true
+vim.opt.ignorecase = true
+vim.opt.softtabstop = 2
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.number = true
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.list = false
+vim.opt.clipboard="unnamedplus"
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = ","
+
+require("lsp_config")
+require("completion")
+require("statusline")
+require('org')
+
+local util = require("util")
+
+-- File related mappings
+util.map('n', '<leader>fs', ':write<CR>', {silent = true})
+util.map('n', '<leader>fo', ':Telescope find_files<CR>', {silent = true})
+
+-- Window related mappings
+util.map('n', '<leader>wq', '<c-w>q')
+util.map('n', '<leader>wv', '<c-w>v')
+util.map('n', '<leader>ws', '<c-w>s')
+util.map('n', '<leader>wh', '<c-w>h')
+util.map('n', '<leader>wl', '<c-w>l')
+util.map('n', '<leader>wk', '<c-w>k')
+util.map('n', '<leader>wj', '<c-w>j')
+
+
+-- Buffer related mappings
+util.map('n', '<leader>bb', ':Telescope buffers<CR>', {silent = true})
+util.map('n', '<leader>q', ':quit<CR>', {silent = true})
+
+--vim.opt.conceallevel = 2
+
+
+-- Lua
+--require('lspconfig').sumneko_lua.setup {
+--  cmd = {"/usr/bin/lua-language-server"};
+--  settings = {
+--    Lua = {
+--      runtime = {
+--        version = 'Lua 5.4',
+--        path = {
+--          '?.lua',
+--          '?/init.lua',
+--          vim.fn.expand'~/.luarocks/share/lua/5.4/?.lua',
+--          vim.fn.expand'~/.luarocks/share/lua/5.4/?/init.lua',
+--          '/usr/share/5.4/?.lua',
+--          '/usr/share/lua/5.4/?/init.lua'
+--        }
+--      },
+--      diagnostics = {
+--        globals = {'vim', 'use_rocks'},
+--      },
+--      workspace = {
+--        library = {
+--          [vim.fn.expand'~/.luarocks/share/lua/5.4'] = true,
+--          ['/usr/share/lua/5.4'] = true,
+--          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+--          [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true
+--        }
+--      }
+--    }
+--  }
+--}
+
+--vim.g.airline_powerline_fonts = 1
+
+--map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true, silent = true})
+--map('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"', {expr = true, silent = true})
+
+vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+
+-- Causes error
+--vim.opt.shortmess:append({ c = true })
+
+--local actions = require('telescope.actions')
+--local action_state = require "telescope.actions.state"
+--local note_link = function()
+--  require('telescope.builtin').find_files()
+--end
+--
+--require('telescope').setup {
+--  defaults = {
+--    mappings = {
+--      i = {
+--        ["<esc>"] = actions.close
+--      }
+--    }
+--  },
+--  pickers = {
+--    find_files = {
+--      mappings = {
+--        i = {
+--          ["<C-l>"] = function(prompt)
+--            local inspect = require('inspect')
+--            actions.close(prompt)
+--            print("prompt "..prompt)
+--            local selection = action_state.get_selected_entry()
+--            print(inspect(selection))
+--            print(selection.value)
+--            print(selection.cwd)
+--
+--            local buf = vim.api.nvim_get_current_buf()
+--            print("Buff: "..buf)
+--            print("Name: "..vim.api.nvim_buf_get_name(0))
+--            local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+--            print("Row: " .. row .. " Col: " .. col)
+--            print(vim.fn.expand(selection.value))
+--            vim.api.nvim_buf_set_text(buf, row-1,col,row-1,col, {"[".. selection.value .. "](" .. selection.cwd .. '/' ..selection.value..")"})
+--          end
+--        }
+--      }
+--    }
+--  }
+--}
+--
+-- Notes related vars and functions.
+--
+-- When this section gets large consider moving to separate notes.lua file and require here
+--
+-- Should use a function or $HOME here
+--local note_dir = vim.env.HOME .."/NOTES"
+----vim.opt.pandoc.syntax.conceal.urls = 1
+--vim.cmd('command! -nargs=? NoteNew :execute ":e "' .. note_dir .. '"/<args>.md"')
+----print(vim.g.pandoc.syntax.codeblocks.embeds.langs)
+--print(vim.g['pandoc#syntax#codeblocks#embeds#langs'])
+--vim.g['pandoc#syntax#codeblocks#embeds#langs'] = {'json','html'}
+--vim.g['pandoc#syntax#conceal#urls'] = 1
+--vim.cmd('command! -nargs=? NoteNew :execute :e ' ..  note_dir .. '/<args>.md')
+--vim.cmd('command! NoteEdit :Telescope find_files cwd=' .. note_dir)
+--vim.cmd('command! NoteQuick :e ' .. note_dir .. '/unfiled.md')
+--vim.cmd('command! NoteSearch :Telescope live_grep cwd=' .. note_dir)
+
+--util.map('n', '<leader>ni', ':e ~/Documents/gdrive/index.org<CR>')
+--util.map('n', '<leader>ne', ':NoteEdit<CR>')
+--map('n', '<leader>nl', "<cmd>lua require('notes').note_link()<CR>")
+-- Binding for reloading init.lua.
+--util.map('n', '<leader>rl', ':source ~/dotfiles/nvim/init.lua<CR>', {silent = true})

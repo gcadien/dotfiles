@@ -1,0 +1,20 @@
+record Bar
+  x: Long,
+  y: String
+end
+
+defm foo() end
+
+defm bar(f: Foo) 
+  x := true
+end
+
+record Baz 
+end
+
+foo()
+ 
+b := do
+  x := 5
+end
+b()
