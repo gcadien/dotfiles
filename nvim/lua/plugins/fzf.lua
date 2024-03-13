@@ -1,6 +1,4 @@
-local M = { 
+return { 
   'junegunn/fzf', 
   event = "VeryLazy"
 }
-
-return M
