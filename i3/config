@@ -11,6 +11,10 @@
 
 set $mod Mod4
 
+# Start the picom compositor
+exec --no-startup-id picom -b
+exec --no-startup-id ~/.xinput-settings.sh
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -39,7 +43,7 @@ bindsym $mod+Ctrl+l exec xautolock -locknow
 bindsym $mod+Ctrl+m exec ddcutil setvcp 60 0x12
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec ghostty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -183,8 +187,9 @@ client.urgent           #C10004 #900000 #ffffff #900000
 # Brightness Control
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +5%
-#bindsym XF86MonBrightnessDown exec --no-startup-id light 5
-#bindsym XF86MonBrightnessUp exec --no-startup-id light 5
+
+# Use caps lock as control
+exec --no-startup-id "setxkbmap -option ctrl:nocaps"
 
 # Polybar.  Replaces i3 bar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &

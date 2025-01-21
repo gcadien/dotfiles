@@ -1,5 +1,5 @@
 cert.xml
-lazy-lock.json
+nvim/lazy-lock.json
 intellij-java-google-style.xml
 fish/fish_variables
 nvim/plugin/packer_compiled.lua

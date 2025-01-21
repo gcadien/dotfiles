@@ -22,6 +22,8 @@ return {
 			--vim.lsp.buf.format({ timeout_ms = 10000 })
 			lspconfig.lua_ls.setup({})
 			lspconfig.kotlin_language_server.setup({})
+      lspconfig.openscad_lsp.setup({})
+      lspconfig.basedpyright.setup({})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
