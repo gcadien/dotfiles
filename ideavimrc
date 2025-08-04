@@ -1,5 +1,7 @@
 let mapleader=" "
 
+set clipboard+=unnamedplus
+set linenumber
 set number
 set smartcase
 set ignorecase

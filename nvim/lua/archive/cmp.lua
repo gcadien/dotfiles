@@ -20,6 +20,10 @@ return {
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
 					--["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
 				},
+         window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					{ name = "buffer" },
